@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="AddisMarket.css">
+         <link rel="stylesheet" href="Addis.php">
+
+         <title> Final Projectc</title>
+     <body>
+         <nav>
+             <div class="logo">
+                 <h1>Addis Market</h1>
+             </div>
+             <ul class="nav-links"> 
+                <li><a href="AddisMarket.html">Home</a></li>
+                <li><a href="AddisGallery.html">Gallery</a></li>
+                <li><a href="AboutAddis.html">About us</a></li>
+                <li><a href="Addismap.html">Location</a></li>
+                <li><a href="Addiscontact.html">Contact us</a></li>
+            </ul>
+            <div class="burger">
+            <div id="myLinks">
+                <a href="AddisMarket.html">Home</a>
+                <a href="AddisGallery.html">Gallery</a>
+                <a href="AboutAddis.html">About us</a>
+                <a href="Addismap.html">Location</a>
+                <a href="Addiscontact.html">Contact us</a>
+                </div>
+                </div>
+         </nav>
+  </head>  
+   
+     <!-- START HTML FORM -->
+   <form action="contact-form.php" method="post">
+   <div>
+     <label>
+       Name:<br /><input type="text" name="Name" required="required" placeholder="Full Name (required)" title="Name is required" tabindex="10" size="44" autofocus />
+     </label>
+   </div>
+   <div>	
+     <label>
+       Email:<br /><input type="email" name="Email" required="required" placeholder="Email (required)" title="A valid email is required" tabindex="20" size="44" />
+     </label>
+   </div>
+   <!-- below change the HTML to your form elements - only 'Name' & 'Email' (above) are significant -->
+   <div>	
+     <label>
+       Comments:<br /><textarea name="Comments" cols="36" rows="4" placeholder="Your comments are important to us!" tabindex="30"></textarea>
+     </label>
+   </div>	
+     <div class="g-recaptcha" data-sitekey="6LeDaSoUAAAAACnEiqA3QAkiRU-Q_wtk0vuBa_OX"></div> 
+   <div>
+     <input type="submit" value="submit" />
+   </div>
+     </form>      
+     <?php
+            $toAddress = "bw.estegenetalamerew@gmail.com";
+            $toName = "ETSEGENET ALAMEREW"
+            $website = "https://www.addismarketseattle.com/"
+
+            echo loadContact('simple.php')
+        ?>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+     <script>
+      
+         function checkRecaptcha() {
+             res = $('#g-recaptcha-response').val();
+             if (res == "" || res == undefined || res.length == 0)
+                 return false;
+             else
+                 return true;
+         }
+         $(function() {
+             let thisForm = document.forms[0];
+             $(thisForm).submit(function(e) {            
+                 if(!checkRecaptcha()) {
+                     alert("Please confirm you are not a robot.");
+                     return false;
+                 }
+             });
+         }); 
+     </script>       
+     <footer>
+       <small>&copy; 2013-2022, All Rights Reserved ~
+       <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+       <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a> 
+       <a href="https://docs.google.com/document/d/1sSFaLSTlUVe998OdyDPMDNsM8F64RHfBs8qi9nY0Guo/edit?usp=sharing" target="_blank">Website Disclaimer</a> ~
+
+       </small>
+     </footer>
+ </body>
+ </html>
+
+
+
+
+
+
